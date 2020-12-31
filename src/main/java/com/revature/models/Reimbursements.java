@@ -1,6 +1,7 @@
 package com.revature.models;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class Reimbursements {
 	
@@ -28,6 +29,14 @@ public class Reimbursements {
 		this.claimOwner = claimOwner;
 	}
 	
+	public Date getTime() {
+		//getting the date for time submited
+		SimpleDateFormat formatter= new SimpleDateFormat("yyyy-MM-dd 'at' HH:mm:ss z");
+		Date d = new Date(System.currentTimeMillis());
+		//System.out.println(formatter.format(d));
+		return(d);
+				
+	}
 	
 	public double getReimbursementAmount() {
 		return reimbursementAmount;

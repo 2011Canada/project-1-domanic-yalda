@@ -15,7 +15,7 @@ public interface UserDao {
 	
 	public User findUserByUsernamePassword(String username, String password) throws UserNotFoundException, InternalErrorException;
 	
-	public List<User> findByTypeOfUser(String type) throws UserNotFoundException, InternalErrorException;
+	public List<User> findAllEmployees() throws UserNotFoundException, InternalErrorException;
 	
 	
 }

@@ -1,5 +1,8 @@
 package com.revature.models;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 public class User {
 	private static int userNum = 0; // used to count total users created and assigns the id 
 	private String username;
@@ -26,6 +29,21 @@ public class User {
 		this.userId = userNum; // sets the id to the incremental value of total users
 	}
 
+	/*
+	public Reimbursements makeTicketClaim() {
+		Reimbursements r = new Reimbursements();
+		r.setReimbursementAmount(150.0);
+		r.setReimbursementSubmission(getTime());
+		r.setReimbursementStatus("Pending");
+		r.setReimbursementResolution(null);
+		r.setReimbursementDescription(null);
+		r.setReimbursementType(null);
+		
+		return r;
+	}
+	
+	*/
+	
 	public String getUsername() {
 		return username;
 	}

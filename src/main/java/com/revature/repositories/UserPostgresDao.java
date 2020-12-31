@@ -49,7 +49,8 @@ public class UserPostgresDao implements UserDao {
 			
 			ResultSet res = getUser.executeQuery();
 			if(res.next()) {
-				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role_id"));	
+				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), 
+						res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role_id"));	
 				return u;
 			}else {
 				throw new UserNotFoundException();
@@ -64,17 +65,16 @@ public class UserPostgresDao implements UserDao {
 	}
 
 	// is it an employee or a finance user
-	public List<User> findByTypeOfUser(String type) throws UserNotFoundException, InternalErrorException {
+	public List<User> findAllEmployees() throws UserNotFoundException, InternalErrorException {
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from users where \"user_type\" = ? ;";
+			String sql = "select * from users where \"user_type\" = employee ;";
 			PreparedStatement getUser = conn.prepareStatement(sql);
-			getUser.setString(1, type);
 			
 			ResultSet res = getUser.executeQuery();
 			List<User> allUsersOfType = new ArrayList<User>();
 			while(res.next()) {
-				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role_id"));	
+				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role"));	
 				allUsersOfType.add(u);
 			}return allUsersOfType;	
 		}catch(SQLException e) {

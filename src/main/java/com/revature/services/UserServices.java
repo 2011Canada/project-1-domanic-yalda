@@ -9,7 +9,7 @@ import com.revature.models.User;
 
 public interface UserServices {
 
-	public User LoginCheck(String username, String password) throws UserNotFoundException, InternalErrorException; // any user login credentials
+	public User loginCheck(String username, String password) throws UserNotFoundException, InternalErrorException; // any user login credentials
 	
 	public List<User> findAllEmployees() throws UserNotFoundException, InternalErrorException;
 	
@@ -17,6 +17,6 @@ public interface UserServices {
 	
 	public Reimbursements viewTicket(); // employee viewing past request
 	
-	public boolean sendTicketStatus(); // manager denying or approving
-	
+	public Reimbursements sendTicketStatusApproved(Reimbursements r); // manager approving
+	public Reimbursements sendTicketStatusDenied(Reimbursements r); // manager denying 
 }
