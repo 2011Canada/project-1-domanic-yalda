@@ -31,7 +31,7 @@ public class FrontController extends HttpServlet {
 		
 		//be our front controller
 		String URI = req.getRequestURI().substring(req.getContextPath().length(), 
-													req.getRequestURI().length());
+				req.getRequestURI().length());
 		
 		System.out.println(URI);
 		switch (URI) {
@@ -103,10 +103,7 @@ public class FrontController extends HttpServlet {
 				break;
 			}
 			
-		}
-		
-		
-		
+		}		
 	}
 	
 	protected void directControl(HttpServletRequest request, HttpServletResponse response) throws IOException {
