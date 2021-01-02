@@ -35,11 +35,11 @@ public class UserServicesImplementation implements UserServices{
 	}
 
 	//employee view tickets
-	public Reimbursements viewTicket() {
-		List<Reimbursements> rList = new ArrayList<Reimbursements>();
+	public List<Reimbursements> viewTicket(User u) {
+		List<Reimbursements> r = new ArrayList<Reimbursements>();
 		//should have user data at this point anyways
-		//Reimbursements r = rd.findAllReimbursementsByUserId(u)
-		return null;
+		r = rd.findAllReimbursementsByUserId(u);
+		return r;
 	}
 
 	//manager approving or denying to update a status 
@@ -57,10 +57,15 @@ public class UserServicesImplementation implements UserServices{
 	}
 	
 
+	//manager viewing all the reimbursements
 	public List<Reimbursements> findAllReimbursements() {
 		List<Reimbursements> r = new ArrayList<Reimbursements>();
 		r = rd.findAllReimbursements();
 		return r;
+	}
+	
+	public Reimbursements makeReimbursementCliam(User u) {
+		return rd.addReimbursement(u);
 	}
 
 }

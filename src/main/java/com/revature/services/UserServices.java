@@ -15,8 +15,10 @@ public interface UserServices {
 	
 	public List<Reimbursements> findAllReimbursements();
 	
-	public Reimbursements viewTicket(); // employee viewing past request
+	public List<Reimbursements> viewTicket(User u); // employee viewing past request
 	
 	public Reimbursements sendTicketStatusApproved(Reimbursements r); // manager approving
 	public Reimbursements sendTicketStatusDenied(Reimbursements r); // manager denying 
+	
+	public Reimbursements makeReimbursementCliam(User u);
 }

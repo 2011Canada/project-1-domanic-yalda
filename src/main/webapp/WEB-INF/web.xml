@@ -6,6 +6,10 @@
     <display-name>FrontController</display-name>
     <servlet-name>FrontController</servlet-name>
     <servlet-class>com.revature.servlets.FrontController</servlet-class>
+    <init-param>
+    	<param-name>DefaultRole</param-name>
+    	<param-value>User</param-value>
+    </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>FrontController</servlet-name>

@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.revature.controllers.ErrorController;
 import com.revature.controllers.LoginController;
 import com.revature.controllers.UserController;
+import com.revature.exceptions.UnauthenticatedException;
+import com.revature.exceptions.UnauthorizedException;
 
 /**
  * Servlet implementation class FrontController
@@ -22,7 +24,7 @@ public class FrontController extends HttpServlet {
 	
 	private UserController userController = new UserController();
     
-	protected void directControlRouter(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException {
+	protected void directControlRouter(HttpServletRequest req, HttpServletResponse res) throws ServletException, IOException, UnauthorizedException, UnauthenticatedException {
 		//how to get a value from your init params
 		System.out.println(this.getInitParameter("DefaultRole"));
 		ServletContext sc = this.getServletContext();

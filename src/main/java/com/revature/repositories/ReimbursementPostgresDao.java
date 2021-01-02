@@ -189,7 +189,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 		
 	}
 
-	public void addReimbursement(Reimbursements r, User u) {
+	public Reimbursements addReimbursement( User u) {
 		/*Connection conn = cf.getConnection();
 		try {
 			conn.setAutoCommit(false);
@@ -228,6 +228,9 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			cf.releaseConnection(conn);
 		}
 		*/
+		Reimbursements r = new Reimbursements();
+		return r;
 	}
+	
 
 }
