@@ -28,7 +28,7 @@ public class LoginController {
 		//use your session to keep track of your user permission level
 		HttpSession sess = req.getSession();
 		//user.getRole
-		sess.setAttribute("User-Role", "Admin");
+		sess.setAttribute("User", u);
 		
 		res.setStatus(200);
 		res.getWriter().write(om.writeValueAsString(u));

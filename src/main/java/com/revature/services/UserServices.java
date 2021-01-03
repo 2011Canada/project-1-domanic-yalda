@@ -20,5 +20,5 @@ public interface UserServices {
 	public Reimbursements sendTicketStatusApproved(Reimbursements r); // manager approving
 	public Reimbursements sendTicketStatusDenied(Reimbursements r); // manager denying 
 	
-	public Reimbursements makeReimbursementCliam(User u);
+	public void makeReimbursementCliam(double amount, String type, String description, User u);
 }

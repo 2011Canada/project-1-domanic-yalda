@@ -7,12 +7,78 @@
     <servlet-name>FrontController</servlet-name>
     <servlet-class>com.revature.servlets.FrontController</servlet-class>
     <init-param>
-    	<param-name>DefaultRole</param-name>
-    	<param-value>User</param-value>
+      <param-name>DefaultRole</param-name>
+      <param-value>User</param-value>
     </init-param>
   </servlet>
   <servlet-mapping>
     <servlet-name>FrontController</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <filter>
+    <filter-name>CORS</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.allowed.methods</param-name>
+      <param-value>GET, POST, HEAD, OPTIONS, PUT, DELETE</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CORS</filter-name>
     <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewReimbursements</display-name>
+    <servlet-name>ViewReimbursements</servlet-name>
+    <servlet-class>com.revature.servlets.ViewReimbursements</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewReimbursements</servlet-name>
+    <url-pattern>/view-reimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>find-employees</display-name>
+    <servlet-name>find-employees</servlet-name>
+    <servlet-class>com.revature.servlets.FindEmployees</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>find-employees</servlet-name>
+    <url-pattern>/find-employees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>all-reimbursements</display-name>
+    <servlet-name>all-reimbursements</servlet-name>
+    <servlet-class>com.revature.servlets.AllReimbursementClaims</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>all-reimbursements</servlet-name>
+    <url-pattern>/all-reimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveOrDenyClaim</display-name>
+    <servlet-name>ApproveOrDenyClaim</servlet-name>
+    <servlet-class>com.revature.servlets.ApproveOrDenyClaim</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveOrDenyClaim</servlet-name>
+    <url-pattern>/ApproveOrDenyClaim</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>make-reimbursement</display-name>
+    <servlet-name>make-reimbursement</servlet-name>
+    <servlet-class>com.revature.servlets.MakeAReimbursementClaim</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>make-reimbursement</servlet-name>
+    <url-pattern>/make-reimbursement</url-pattern>
   </servlet-mapping>
 </web-app>

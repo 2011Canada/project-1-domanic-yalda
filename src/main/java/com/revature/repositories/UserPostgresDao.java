@@ -17,10 +17,15 @@ public class UserPostgresDao implements UserDao {
 	private ConnectionFactory cf = ConnectionFactory.getConnectionFactory();
 
 
+	public UserPostgresDao() {
+		super();
+	}
+
+
 	public List<User> findAllUsers() throws UserNotFoundException, InternalErrorException{
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from users;";
+			String sql = "select * from \"ers_users\";";
 			PreparedStatement getUser = conn.prepareStatement(sql);
 			
 			ResultSet res = getUser.executeQuery();
@@ -42,7 +47,7 @@ public class UserPostgresDao implements UserDao {
 	public User findUserByUsernamePassword(String username, String password) throws UserNotFoundException, InternalErrorException{
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from users where \"ers_username\" = ? and \"ers_password\" = ? ;";
+			String sql = "select * from \"ers_users\" where \"ers_username\" = ? and \"ers_password\" = ? ;";
 			PreparedStatement getUser = conn.prepareStatement(sql);
 			getUser.setString(1, username);
 			getUser.setString(2, password);
@@ -50,7 +55,7 @@ public class UserPostgresDao implements UserDao {
 			ResultSet res = getUser.executeQuery();
 			if(res.next()) {
 				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), 
-						res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role_id"));	
+						res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role"));	
 				return u;
 			}else {
 				throw new UserNotFoundException();
@@ -68,7 +73,7 @@ public class UserPostgresDao implements UserDao {
 	public List<User> findAllEmployees() throws UserNotFoundException, InternalErrorException {
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from users where \"user_type\" = employee ;";
+			String sql = "select * from \"ers_users\" where \"user_type\" = employee ;";
 			PreparedStatement getUser = conn.prepareStatement(sql);
 			
 			ResultSet res = getUser.executeQuery();

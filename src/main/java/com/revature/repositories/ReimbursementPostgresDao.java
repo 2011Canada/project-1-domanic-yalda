@@ -189,28 +189,23 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 		
 	}
 
-	public Reimbursements addReimbursement( User u) {
-		/*Connection conn = cf.getConnection();
+	public void addReimbursement(double amount, String type, String description, User u ) {
+		Connection conn = cf.getConnection();
 		try {
 			conn.setAutoCommit(false);
 			
 			//inserting SQL statement
 			String reimbursementSQL = "insert into \"ers_reimbursement\" "
-					+ "(\"reimb_amount\", \"reimb_submitted\", \"reim_resolved\", \"reimb_description\", \"reim_status\", \"reim_type\" )"
-					+ "values (?,?,?,?,?,?);";
+					+ "(\"reimb_amount\", \"reimb_type\", \"reim_description\" )"
+					+ "values (?,?,?);";
 			PreparedStatement insertReimbursement = conn.prepareStatement(reimbursementSQL);
 			
-			insertReimbursement.setString(1, c.getFirstName());
-			insertReimbursement.setString(2, c.getLastName());
-			insertReimbursement.setString(3, c.getUsername());
-			insertReimbursement.setString(4, c.getPassword());
-			insertReimbursement.setInt(5, (u.getUserId()));
+			insertReimbursement.setDouble(1, amount);
+			insertReimbursement.setString(2, type);
+			insertReimbursement.setString(3, description);
+			insertReimbursement.setInt(4, (u.getUserId()));
 			
 			ResultSet res = insertReimbursement.executeQuery();
-			
-			if( c.getBankAccount() != null ) {
-				bapd.addAccount(c, c.getBankAccount());
-			}
 			
 		}catch(SQLException e) {
 			e.printStackTrace();
@@ -227,9 +222,6 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			}
 			cf.releaseConnection(conn);
 		}
-		*/
-		Reimbursements r = new Reimbursements();
-		return r;
 	}
 	
 

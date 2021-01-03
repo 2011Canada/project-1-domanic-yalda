@@ -20,6 +20,6 @@ public interface ReimbursementDao {
 	public void UpdateStatusApproved(Reimbursements r);
 	public void UpdateStatusDenied(Reimbursements r);
 	
-	public Reimbursements addReimbursement( User u);
+	public void addReimbursement(double amount, String type, String description, User u);
 
 }

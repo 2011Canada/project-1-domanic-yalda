@@ -9,16 +9,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.revature.controllers.ErrorController;
-import com.revature.controllers.LoginController;
 import com.revature.controllers.UserController;
 import com.revature.exceptions.UnauthenticatedException;
 import com.revature.exceptions.UnauthorizedException;
 
 /**
- * Servlet implementation class FrontController
+ * Servlet implementation class FindEmployees
  */
-public class FrontController extends HttpServlet {
-	private LoginController authController = new LoginController();
+public class FindEmployees extends HttpServlet {
+
 	
 	private ErrorController errorController = new ErrorController();
 	
@@ -37,43 +36,43 @@ public class FrontController extends HttpServlet {
 		
 		System.out.println(URI);
 		switch (URI) {
-			case "/login":{
-				switch (req.getMethod()) {
-					case "GET":{
-						res.setStatus(400);
-						res.getWriter().write("Method Not Supported");
-						break;
-					}
-					case "POST":{
-						authController.userLogin(req, res);
-						break;
-					}
-					case "PUT":{
-						res.setStatus(400);
-						res.getWriter().write("Method Not Supported");
-						break;
-					}
-					case "DELETE":{
-						res.setStatus(400);
-						res.getWriter().write("Method Not Supported");
-						break;
-					}
-					default:{
-						res.setStatus(400);
-						res.getWriter().write("Method Not Supported");
-						break;
-					}
+			case "/manager-home": {
+			switch (req.getMethod()) {
+				case "GET":{
+					res.setStatus(400);
+					res.getWriter().write("Method Not Supported");
+					break;
 				}
-				break;
+				case "POST":{
+					userController.findAllUsers(req, res);
+					break;
+				}
+				case "PUT":{
+					res.setStatus(400);
+					res.getWriter().write("Method Not Supported");
+					break;
+				}
+				case "DELETE":{
+					res.setStatus(400);
+					res.getWriter().write("Method Not Supported");
+					break;
+				}
+				default:{
+					res.setStatus(400);
+					res.getWriter().write("Method Not Supported");
+					break;
+				}
 			}
-			
+			}
 			default:{
 				res.setStatus(404);
 				res.getWriter().write("No Such Resource");
 				break;
+			
 			}
-		}		
+		}
 	}
+	
 	
 	protected void directControl(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		//to handle all internal errors/exceptions

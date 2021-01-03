@@ -64,8 +64,8 @@ public class UserServicesImplementation implements UserServices{
 		return r;
 	}
 	
-	public Reimbursements makeReimbursementCliam(User u) {
-		return rd.addReimbursement(u);
+	public void makeReimbursementCliam(double amount, String type, String description, User u) {
+		rd.addReimbursement(amount, type, description, u);
 	}
 
 }
