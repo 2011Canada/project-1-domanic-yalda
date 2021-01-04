@@ -30,7 +30,6 @@ public class UserServicesImplementation implements UserServices{
 
 	public User loginCheck(String username, String password) throws UserNotFoundException, InternalErrorException {
 		User  u = ud.findUserByUsernamePassword(username, password);
-
 		return u;
 	}
 

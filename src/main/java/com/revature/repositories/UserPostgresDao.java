@@ -31,7 +31,7 @@ public class UserPostgresDao implements UserDao {
 			ResultSet res = getUser.executeQuery();
 			List<User> allUsers = new ArrayList<User>();
 			while(res.next()) {
-				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role_id"));	
+				User u = new User(res.getString("ers_username"), res.getString("ers_password"), res.getString("user_first_name"), res.getString("user_last_name"), res.getString("user_email"), res.getString("user_role"));	
 				allUsers.add(u);
 			}
 			return allUsers;
@@ -73,7 +73,7 @@ public class UserPostgresDao implements UserDao {
 	public List<User> findAllEmployees() throws UserNotFoundException, InternalErrorException {
 		Connection conn = cf.getConnection();
 		try {
-			String sql = "select * from \"ers_users\" where \"user_type\" = employee ;";
+			String sql = "select * from \"ers_users\" where \"user_role\" = 'employee' ;";
 			PreparedStatement getUser = conn.prepareStatement(sql);
 			
 			ResultSet res = getUser.executeQuery();

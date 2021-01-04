@@ -29,7 +29,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			List<Reimbursements> allTickets = new ArrayList<Reimbursements>();
 			while(res.next()) {
 				Reimbursements r = new Reimbursements(res.getDouble("reimb_amount"), res.getString("reimb_type"), res.getDate("reimb_submitted"), 
-						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("ers_user_id"));	
+						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("reimb_author"));	
 				allTickets.add(r);
 			}
 			return allTickets;
@@ -53,7 +53,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			List<Reimbursements> allTickets = new ArrayList<Reimbursements>();
 			while(res.next()) {
 				Reimbursements r = new Reimbursements(res.getDouble("reimb_amount"), res.getString("reimb_type"), res.getDate("reimb_submitted"), 
-						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("ers_user_id"));	
+						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("reimb_author"));	
 				allTickets.add(r);
 			}
 			return allTickets;
@@ -76,7 +76,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			List<Reimbursements> allTickets = new ArrayList<Reimbursements>();
 			while(res.next()) {
 				Reimbursements r = new Reimbursements(res.getDouble("reimb_amount"), res.getString("reimb_type"), res.getDate("reimb_submitted"), 
-						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("ers_user_id"));	
+						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("reimb_author"));	
 				allTickets.add(r);
 			}
 			return allTickets;
@@ -99,7 +99,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			List<Reimbursements> allTickets = new ArrayList<Reimbursements>();
 			while(res.next()) {
 				Reimbursements r = new Reimbursements(res.getDouble("reimb_amount"), res.getString("reimb_type"), res.getDate("reimb_submitted"), 
-						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("ers_user_id"));	
+						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("reimb_author"));	
 				allTickets.add(r);
 			}
 			return allTickets;
@@ -122,7 +122,7 @@ public class ReimbursementPostgresDao implements ReimbursementDao{
 			List<Reimbursements> allTickets = new ArrayList<Reimbursements>();
 			while(res.next()) {
 				Reimbursements r = new Reimbursements(res.getDouble("reimb_amount"), res.getString("reimb_type"), res.getDate("reimb_submitted"), 
-						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("ers_user_id"));	
+						res.getDate("reimb_resolved"), res.getString("reimb_status"), res.getString("reimb_description"), res.getInt("reimb_author"));	
 				allTickets.add(r);
 			}
 			return allTickets;

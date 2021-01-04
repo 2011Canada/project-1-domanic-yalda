@@ -48,5 +48,7 @@ insert into "ers_reimbursement" ("reimb_amount","reimb_submitted","reimb_resolve
 								
 									
 select * from "ers_users"; -- allusers
+select * from "ers_users" where "user_role" = 'employee'; -- all employees
+
 select * from "ers_reimbursement" er left join "ers_users" eu on er.reimb_author = eu.ers_users_id; -- reimbursement and the user that sent it 
 select * from ers_reimbursement er where reimb_author = 3; -- test find author (user that sent the claim)
