@@ -18,7 +18,7 @@ create table "ers_users"(
 
 create table "ers_reimbursement"(
 	"reimb_id" serial primary key,
-	"reimb_amount" money,
+	"reimb_amount" float,
 	"reimb_submitted" timestamp,
 	"reimb_resolved" timestamp,
 	"reimb_description" text,
