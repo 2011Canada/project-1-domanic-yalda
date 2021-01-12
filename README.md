@@ -26,10 +26,12 @@ Finance Manager:
   - Managers can approve or deny any request made by an Employee
 
 Use Case Model:
+
 ![](images/p1-use-cases.PNG)
 
 
 Activity Diagram:
+
 ![](images/p1-activity-diagram.PNG)
 
 
