@@ -18,6 +18,7 @@ Employee:
   - Employees can Login
   - Employees can view their past ticket claims
   - Employess can make another reimbursement submission
+
 Finance Manager:
   - Managers can Login
   - Managers can view all reimbursements for all the employees
