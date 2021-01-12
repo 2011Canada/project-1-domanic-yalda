@@ -24,3 +24,13 @@ Finance Manager:
   - Managers can view all reimbursements for all the employees
   - Managers can filter the requested reimbursement data (Ex. by status, userId, reimbursement types ...)
   - Managers can approve or deny any request made by an Employee
+
+Use Case Model:
+![](images/p1-use-cases)
+
+
+Activity Diagram:
+![](images/p1-activity-diagram)
+
+
+
